@@ -1,0 +1,174 @@
+{% extends 'shop/base.html' %}
+{%load static %}
+{%block title%}Home{% endblock title%}
+
+
+
+{%block content%}
+
+<link rel="shortcut icon" href="images/favicon.png" type="">
+<title>Famms - Fashion HTML Template</title>
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="{% static 'shop/css/bootstrap.css' %} " />
+<!-- font awesome style -->
+<link href="{% static 'shopcss/font-awesome.min.css' %} " rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="{% static 'shop/css/style.css' %} " rel="stylesheet" />
+<!-- responsive style -->
+<link href="{% static 'shop/css/responsive.css' %} " rel="stylesheet" />
+
+
+ <!-- slider section -->
+ <section class="slider_section ">
+    <div class="slider_bg_box">
+       <img src="{% static 'shop/images/slider-bg.jpg' %} " alt="">
+    </div>
+    <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+       <div class="carousel-inner">
+          <div class="carousel-item active">
+             <div class="container ">
+                <div class="row">
+                   <div class="col-md-7 col-lg-6 ">
+                      <div class="detail-box">
+                         <h1>
+                            <span>
+                            Sale 20% Off
+                            </span>
+                            <br>
+                            On Everything
+                         </h1>
+                         <p>
+                            Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                         </p>
+                         <div class="btn-box">
+                            <a href="" class="btn1">
+                            Shop Now
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="carousel-item ">
+             <div class="container ">
+                <div class="row">
+                   <div class="col-md-7 col-lg-6 ">
+                      <div class="detail-box">
+                         <h1>
+                            <span>
+                            Sale 20% Off
+                            </span>
+                            <br>
+                            On Everything
+                         </h1>
+                         <p>
+                            Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                         </p>
+                         <div class="btn-box">
+                            <a href="" class="btn1">
+                            Shop Now
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="carousel-item">
+             <div class="container ">
+                <div class="row">
+                   <div class="col-md-7 col-lg-6 ">
+                      <div class="detail-box">
+                         <h1>
+                            <span>
+                            Sale 20% Off
+                            </span>
+                            <br>
+                            On Everything
+                         </h1>
+                         <p>
+                            Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                         </p>
+                         <div class="btn-box">
+                            <a href="" class="btn1">
+                            Shop Now
+                            </a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="container">
+          <ol class="carousel-indicators">
+             <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+             <li data-target="#customCarousel1" data-slide-to="1"></li>
+             <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+       </div>
+    </div>
+ </section>
+  <!-- end slider section -->
+
+ <!-- product section -->
+
+ <section class="product_section layout_padding">
+     
+    <div class="container">
+       <div class="heading_container heading_center">
+          <h2>
+             Our <span>products</span>
+          </h2>
+       </div>
+    
+       <div class="row">
+        {% for product in products %}
+          <div class="col-sm-6 col-md-4 col-lg-4">
+             <div class="box">
+                    <div class="option_container">
+                        <div class="options">
+                             <a href="{{product.get_absolute_url}}" class="option1">
+                            Add to cart
+                             </a>
+                      <a href="" class="option2">
+                      Buy Now
+                      </a>
+                   </div>
+                </div>
+                
+                <div class="img-box">
+                   <img src="{{product.image.url}}" alt="">
+                </div>
+                <div class="detail-box">
+                   <h5>
+                      {{product.title}}
+                   </h5>
+                   <h6>
+                      ZMW {{product.price}}
+                   </h6>
+                </div>  
+             </div>
+          </div>
+          {% endfor %}
+          <div class="btn-box">
+            <a href="">
+            View All products
+            </a>
+         </div>
+      </div>
+    </div>
+</section>
+
+<!-- jQery -->
+<script src="{% static 'shop/js/jquery-3.4.1.min.js' %} "></script>
+<!-- popper js -->
+<script src="{% static 'shop/js/popper.min.js' %} "></script>
+<!-- bootstrap js -->
+<script src="{% static 'shop/js/bootstrap.js' %} "></script>
+<!-- custom js -->
+<script src="{% static 'shop/js/custom.js' %} "></script>
+          
+
+{% endblock content%}
